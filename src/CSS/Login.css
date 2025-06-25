@@ -9,11 +9,29 @@ font-weight: 700;
 line-height: normal;
 }
 
+.logo-image {
+  width: 120px; /* 원하는 크기로 조절 */
+  margin-bottom: 30px; /* 로고 아래 간격 */
+}
+
+.login-title {
+  font-size: 24px;
+  margin-bottom: 20px; /* h2 아래 간격 */
+}
+
+.subtext {
+  font-size: 14px;
+  color: #666;
+  margin-top: 20px;
+  margin-bottom: 20px; /* subtext 아래 간격 */
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard';
   background-color: #f9f9f9;
+  margin-top: 10px
 }
 
 .login-container {
@@ -22,6 +40,14 @@ body {
   justify-content: center;
   align-items: center;
   background-color: white;
+  margin-top: 10px
+}
+label {
+  display: block;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 8px;
+  font-weight: 500;
 }
 
 .login-box {
@@ -33,6 +59,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .login-box h1 {
@@ -40,6 +67,12 @@ body {
   font-weight: 700;
   color: #FF9D00;
   margin-bottom: 8px;
+}
+
+.find-links {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
 }
 
 .login-box h2 {
@@ -67,12 +100,11 @@ body {
 
 .find-links {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 0.8rem;
-  margin-bottom: 24px;
-  color: #888;
+  justify-content: flex-end;
+  width: 100%;          /* 부모 요소 너비 전부 차지하게 */
+  margin: 10px 0 20px;
 }
+
 
 .find-links a {
   color: #888;

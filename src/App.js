@@ -17,7 +17,7 @@ function App() {
       <Route path='/auth' element={<Auth></Auth>}></Route>
       <Route path="/" element={<Navigate to="/login" replace />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/student/main" element={<Home/>} />
+      <Route path="/student/Home" element={<Home/>} />
       <Route path="/student/survey" element={<Survey />} />
       <Route path='/student/major-info' element={<MajorInfo />} />
     </Routes>

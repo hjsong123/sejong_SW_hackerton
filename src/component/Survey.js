@@ -1,28 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function SurveyForm() {
-  const questions = [
-    {
-      id: 1,
-      key: "reading",
-      text: "1. 하루에 얼마나 자주 독서를 하나요?",
-      options: ["전혀 안 함", "가끔", "보통", "자주", "매우 자주"],
-    },
-    {
-      id: 2,
-      key: "sns",
-      text: "2. SNS를 얼마나 자주 사용하나요?",
-      options: ["전혀 안 함", "가끔", "보통", "자주", "매우 자주"],
-    },
-    {
-      id: 3,
-      key: "exercise",
-      text: "3. 운동을 얼마나 자주 하나요?",
-      options: ["전혀 안 함", "가끔", "보통", "자주", "매우 자주"],
-    },
-  ];
-
+  const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  // 질문 목록 가져오기
+  useEffect(() => {
+    fetch("http://54.180.175.139:9131/api/")
+      .then((res) => res.json())
+      .then((data) => {
+        setQuestions(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        alert("질문 목록을 불러오는 데 실패했습니다.");
+        console.error(err);
+      });
+  }, []);
 
   const handleChange = (key, value) => {
     setAnswers((prev) => ({
@@ -34,16 +29,13 @@ function SurveyForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const jsonPayload = JSON.stringify(answers);
-    console.log("전송할 JSON:", jsonPayload);
-
     try {
-      const response = await fetch("http://54.180.175.139:9131/api/", {
+      const response = await fetch("http://localhost:8080/api/survey", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: jsonPayload,
+        body: JSON.stringify(answers),
       });
 
       if (response.ok) {
@@ -55,6 +47,8 @@ function SurveyForm() {
       alert("네트워크 오류: " + err.message);
     }
   };
+
+  if (loading) return <p>질문을 불러오는 중입니다...</p>;
 
   return (
     <form onSubmit={handleSubmit}>

@@ -5,9 +5,8 @@ import Auth from './component/Auth';
 import Login from './component/Login';
 import Survey from './component/Student/Survey';
 import MajorInfo from './component/Student/MajorInfo';
-import MainStd from './component/Student/MainStd';
 import Survey from './component/Survey';
-import Home from './component/Home';
+import Home from './component/Student/Home';
 
 import './App.css';
 import './CSS/Survey.css';

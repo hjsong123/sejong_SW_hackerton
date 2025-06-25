@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import '../CSS/Login.css'
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -32,32 +32,28 @@ function Login() {
   };
 
   return (
-    <div className="login">
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">email:</label>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+    <div className="login-container">
+      <form className="login-box" onSubmit={handleSubmit}>
+<img src="/majorly_logo.svg" alt="Majorly 로고" className="logo-image" />
+<h2 className="login-title">통합 로그인</h2>
+        <p className="subtext">아이디는 학생은 학번, 교수자는 포털 아이디(이메일) 또는 직원번호입니다.</p>
+        <input
+          type="text"
+          placeholder="학번 / 아이디"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="비밀번호"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <div className="find-links">
+          <a href="#">아이디 찾기</a>
+          <a href="#">비밀번호 찾기</a>
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit">Login</button>
+        <button type="submit">로그인</button>
       </form>
     </div>
   );

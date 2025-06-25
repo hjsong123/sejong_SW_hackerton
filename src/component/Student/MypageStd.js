@@ -4,4 +4,4 @@ function MypageStd(){
     )
 }
 
-export default Splash;
+export default MypageStd;

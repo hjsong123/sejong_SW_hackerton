@@ -1,0 +1,10 @@
+.question-container{
+    font-family: "Arial", sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.question-box{
+    
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Header from "./Header";
 
 function SurveyForm() {
   const [questions, setQuestions] = useState([]);
@@ -6,18 +7,18 @@ function SurveyForm() {
   const [loading, setLoading] = useState(true);
 
   // 질문 목록 가져오기
-  useEffect(() => {
-    fetch("http://54.180.175.139:9131/api/")
-      .then((res) => res.json())
-      .then((data) => {
-        setQuestions(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        alert("질문 목록을 불러오는 데 실패했습니다.");
-        console.error(err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://54.180.175.139:9131/api/questions")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setQuestions(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       alert("질문 목록을 불러오는 데 실패했습니다.");
+  //       console.error(err);
+  //     });
+  // }, []);
 
   const handleChange = (key, value) => {
     setAnswers((prev) => ({
@@ -48,31 +49,34 @@ function SurveyForm() {
     }
   };
 
-  if (loading) return <p>질문을 불러오는 중입니다...</p>;
+  // if (loading) return <p>질문을 불러오는 중입니다...</p>;
 
   return (
-    <form onSubmit={handleSubmit}>
-      {questions.map((q) => (
-        <div key={q.id}>
-          <p>{q.text}</p>
-          {q.options.map((option, index) => (
-            <label key={index}>
-              <input
-                type="radio"
-                name={q.key}
-                value={option}
-                checked={answers[q.key] === option}
-                onChange={() => handleChange(q.key, option)}
-                required
-              />
-              {option}
-            </label>
-          ))}
-        </div>
-      ))}
+    <div>
+      <Header></Header>
+      {/* <form onSubmit={handleSubmit}>
+        {questions.map((q) => (
+          <div key={q.id}>
+            <p>{q.text}</p>
+            {q.options.map((option, index) => (
+              <label key={index}>
+                <input
+                  type="radio"
+                  name={q.key}
+                  value={option}
+                  checked={answers[q.key] === option}
+                  onChange={() => handleChange(q.key, option)}
+                  required
+                />
+                {option}
+              </label>
+            ))}
+          </div>
+        ))}
 
-      <button type="submit">제출</button>
-    </form>
+        <button type="submit">제출</button>
+      </form> */}
+    </div>
   );
 }
 

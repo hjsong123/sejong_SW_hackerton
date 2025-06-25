@@ -1,23 +1,12 @@
-
+import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 function Home(){
-
+    const move_page = useNavigate();
 
     return(
         <div id="home-container">
-                <div id="home-header">
-                    <div class="header-left">
-                        <span class="logo">Majorly</span>
-                        <nav class="nav-menu">
-                        <a href="#">진로 적성 테스트</a>
-                        <a href="#">학과 서베이 추천</a>
-                        </nav>
-                    </div>
-                    <div class="header-right">
-                        <span>🔔</span>
-                        <span>👤</span>
-                    </div>
-                    </div>
+                <Header></Header>
             <div id="home-north">
                 <div id="home-middle1">
                     <h2>Majorly에 오신것을 환영합니다.</h2>

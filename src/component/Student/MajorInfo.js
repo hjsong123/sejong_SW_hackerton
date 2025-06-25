@@ -1,6 +1,10 @@
+import Header from "./Header";
+
 function MajorInfo(){
     return(
-        <div>MajorInfo</div>
+        <div>
+            <Header></Header>
+        </div>
     )
 }
 

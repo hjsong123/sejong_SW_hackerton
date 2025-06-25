@@ -6,9 +6,9 @@ function Header(){
     return(
         <div id="home-header">
             <div class="header-left">
-                <span class="logo">Majorly</span>
+                <span class="logo" onClick={() => {move_page("/student/home")}}>Majorly</span>
                 <nav class="nav-menu">
-                    <span onClick={() => move_page("/student/survey")}>진로 적성 테스트</span>
+                    <span onClick={() => move_page("/student/choice")}>진로 적성 테스트</span>
                     <span onClick={() => move_page("/student/major-info")}>학과 서베이 추천</span>
                 </nav>
             </div>

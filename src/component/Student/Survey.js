@@ -1,24 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
+import { useParams } from "react-router-dom";
 
 function SurveyForm() {
-  const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
   const [loading, setLoading] = useState(true);
-
-  // 질문 목록 가져오기
-  // useEffect(() => {
-  //   fetch("http://54.180.175.139:9131/api/questions")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setQuestions(data);
-  //       setLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       alert("질문 목록을 불러오는 데 실패했습니다.");
-  //       console.error(err);
-  //     });
-  // }, []);
+  let { params } = useParams();
 
   const handleChange = (key, value) => {
     setAnswers((prev) => ({

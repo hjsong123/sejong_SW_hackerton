@@ -1,0 +1,88 @@
+.choice-box{
+    height: 80vh;
+    display: flex;
+}
+
+.test-list-container {
+  font-family: Arial, sans-serif;
+    flex-grow: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* 상단 헤더 */
+.test-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FF9D00;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.test-title .semester {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.test-title h2 {
+  margin: 4px 0 0;
+  font-size: 1.5rem;
+}
+
+.header-icon {
+  width: 60px;
+  height: auto;
+}
+
+/* 테스트 그룹 */
+.test-group {
+  background-color: white;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.group-title {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.week-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.week-buttons button {
+  border: 2px solid #FF9D00;
+  color: #FF9D00;
+  background: transparent;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.week-buttons button:hover {
+  background-color: #FF9D00;
+  color: white;
+}
+
+/* 하단 화살표 버튼 */
+.next-button {
+  background-color: #FF9D00;
+  color: white;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  float: right;
+  cursor: pointer;
+  margin-top: 20px;
+}

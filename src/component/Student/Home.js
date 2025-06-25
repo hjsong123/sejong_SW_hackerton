@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 
 function Home(){
     const move_page = useNavigate();
@@ -65,24 +66,7 @@ function Home(){
                     </div>
                     </div>
             </div>
-            <div id="home-footer">
-            <div class="footer-top">
-                <ul class="footer-menu">
-                <li>Product</li>
-                <li>Features</li>
-                <li>Pricing</li>
-                <li>Resources</li>
-                </ul>
-                <div class="footer-icons">
-                <span class="icon">🔵</span>
-                <span class="icon">⚫</span>
-                </div>
-            </div>
-            <hr />
-            <div class="footer-bottom">
-                © Copyright 2025, All Rights Reserved by MAJOLY
-            </div>
-            </div>
+            <Footer></Footer>
         </div>
     )
 }

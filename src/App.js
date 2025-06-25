@@ -6,10 +6,12 @@ import Login from './component/Login';
 import MajorInfo from './component/Student/MajorInfo';
 import Survey from './component/Student/Survey';
 import Home from './component/Student/Home';
+import Choice from './component/Student/Choice';
 
 import './App.css';
 import './CSS/Survey.css';
 import './CSS/Home.css';
+import './CSS/Choice.css';
 
 function App() {
   return (
@@ -18,7 +20,8 @@ function App() {
       <Route path="/" element={<Navigate to="/login" replace />} />
       <Route path="/login" element={<Login />} />
       <Route path="/student/Home" element={<Home/>} />
-      <Route path="/student/survey" element={<Survey />} />
+      <Route path="/student/choice" element={<Choice/>} />
+      <Route path="/student/survey:id" element={<Survey />} />
       <Route path='/student/major-info' element={<MajorInfo />} />
     </Routes>
   );

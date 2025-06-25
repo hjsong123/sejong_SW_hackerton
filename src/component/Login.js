@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import '../CSS/Login.css'
 
 function Login() {
-  const [email, setEmail] = useState("");
+  const [studentNumber, setStudentNumber] = useState("");
   const [password, setPassword] = useState("");
+  const move_page = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -13,13 +15,14 @@ function Login() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ studentNumber, password }),
       });
       if (response.ok) {
         const data = await response.json();
         if (data.accessToken) {
           localStorage.setItem("jwt", data.accessToken);
           alert("로그인 성공! JWT 저장 완료");
+          move_page("/student/home");
         } else {
           alert("로그인 성공, 하지만 토큰이 없습니다.");
         }
@@ -40,8 +43,8 @@ function Login() {
        <label htmlFor="password">학번 / 아이디</label>
        <input
           type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={studentNumber}
+          onChange={(e) => setStudentNumber(e.target.value)}
         />
           <label htmlFor="password">비밀번호</label>
 

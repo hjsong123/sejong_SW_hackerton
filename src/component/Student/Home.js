@@ -1,9 +1,46 @@
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import { useEffect, useState } from "react";
 
 function Home(){
     const move_page = useNavigate();
+    const [isValid, setIsValid] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const token = localStorage.getItem('jwt');
+        if (!token) {
+            alert('로그인이 필요합니다.');
+            window.location.href = '/login';
+            return;
+        }
+        // JWT 유효성 검증 요청
+        fetch('http://54.180.175.139:9131/api/auth', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+            },
+        })
+        .then(res => {
+            if (res.ok) {
+                setIsValid(true);
+            } else {
+                alert('세션이 만료되었거나 유효하지 않은 토큰입니다.');
+                localStorage.removeItem('jwt');
+                window.location.href = '/login';
+            }
+        })
+        .catch(() => {
+            alert('서버 오류. 다시 로그인 해주세요.');
+            localStorage.removeItem('jwt');
+            window.location.href = '/login';
+        })
+        .finally(() => setLoading(false));
+    }, []);
+
+    if (loading) return <div>로딩 중...</div>;
+    if (!isValid) return null;
 
     return(
         <div id="home-container">

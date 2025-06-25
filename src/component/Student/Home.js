@@ -9,8 +9,8 @@ function Home(){
                     <div class="header-left">
                         <span class="logo">Majorly</span>
                         <nav class="nav-menu">
-                        <a href="#">진로 적성 테스트</a>
-                        <a href="#">학과 서베이 추천</a>
+                        <a href="#">전공 적합성 테스트</a>
+                        <a href="#">학과 세부 전공</a>
                         </nav>
                     </div>
                     <div class="header-right">

@@ -37,21 +37,21 @@ function Login() {
 <img src="/majorly_logo.svg" alt="Majorly 로고" className="logo-image" />
 <h2 className="login-title">통합 로그인</h2>
         <p className="subtext">아이디는 학생은 학번, 교수자는 포털 아이디(이메일) 또는 직원번호입니다.</p>
-        <input
+       <label htmlFor="password">학번 / 아이디</label>
+       <input
           type="text"
-          placeholder="학번 / 아이디"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+          <label htmlFor="password">비밀번호</label>
+
         <input
           type="password"
-          placeholder="비밀번호"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <div className="find-links">
-          <a href="#">아이디 찾기</a>
-          <a href="#">비밀번호 찾기</a>
+          <a href="#">아이디 찾기 | 비밀번호 찾기</a>
         </div>
         <button type="submit">로그인</button>
       </form>

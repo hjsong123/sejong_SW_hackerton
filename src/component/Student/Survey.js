@@ -14,6 +14,10 @@ function SurveyForm() {
     }));
   };
 
+  const handleActivitySelect = (value) => {
+    setAnswers((prev) => ({ ...prev, activity: value }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -39,30 +43,52 @@ function SurveyForm() {
   // if (loading) return <p>질문을 불러오는 중입니다...</p>;
 
   return (
-    <div>
-      <Header></Header>
-      {/* <form onSubmit={handleSubmit}>
-        {questions.map((q) => (
-          <div key={q.id}>
-            <p>{q.text}</p>
-            {q.options.map((option, index) => (
-              <label key={index}>
-                <input
-                  type="radio"
-                  name={q.key}
-                  value={option}
-                  checked={answers[q.key] === option}
-                  onChange={() => handleChange(q.key, option)}
-                  required
-                />
-                {option}
-              </label>
+    <div className="survey-container">
+      <Header />
+      <form onSubmit={handleSubmit} className="survey-form">
+        <h2>2025-1 n번째</h2>
+        <h3>Type 1 Test</h3>
+
+        <div className="question-block">
+          <p>이번 주차 학업 활동(강의·과제·토론 등)에 대한 흥미도는 어느 정도였나요?</p>
+          <input
+            type="range"
+            min="1"
+            max="5"
+            value={answers.interest}
+            onChange={(e) => handleChange("interest", Number(e.target.value))}
+          />
+        </div>
+
+        <div className="question-block">
+          <p>이번 주차 학습 난이도 체감은 어땠나요?</p>
+          <input
+            type="range"
+            min="1"
+            max="5"
+            value={answers.difficulty}
+            onChange={(e) => handleChange("difficulty", Number(e.target.value))}
+          />
+        </div>
+
+        <div className="question-block">
+          <p>이번 주차 가장 인상 깊었던 학습 활동을 선택해주세요.</p>
+          <div className="button-group">
+            {["강의 참여", "과제 수행", "그룹 토론", "자료 학습"].map((label) => (
+              <button
+                type="button"
+                key={label}
+                className={answers.activity === label ? "selected" : ""}
+                onClick={() => handleActivitySelect(label)}
+              >
+                {label}
+              </button>
             ))}
           </div>
-        ))}
+        </div>
 
-        <button type="submit">제출</button>
-      </form> */}
+        <button type="submit" className="submit-btn">제출</button>
+      </form>
     </div>
   );
 }

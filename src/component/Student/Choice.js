@@ -39,7 +39,7 @@ function Choice(){
                     <div class="test-group">
                         <p class="group-title">Type 1 Test</p>
                         <div class="week-buttons">
-                        <button>week 02</button><button>week 04</button><button>week 06</button>
+                        <button onClick={() => {move_page("/student/survey")}}>week 02</button><button>week 04</button><button>week 06</button>
                         <button>week 08</button><button>week 10</button><button>week 12</button>
                         <button>week 14</button><button>week 16</button>
                         </div>

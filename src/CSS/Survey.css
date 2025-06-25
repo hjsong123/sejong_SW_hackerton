@@ -1,10 +1,81 @@
-.question-container{
-    font-family: "Arial", sans-serif;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+/* Survey.css */
+
+.survey-container {
+  padding: 2rem;
+  background-color: #fff;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
-.question-box{
-    
+.survey-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.survey-form h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+  color: #ff8a00;
+}
+
+.survey-form h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.question-block {
+  margin-bottom: 2rem;
+}
+
+.question-block p {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin-top: 0.5rem;
+  accent-color: #ff8a00;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.button-group button {
+  padding: 0.5rem 1rem;
+  border: 2px solid #ff8a00;
+  background-color: white;
+  color: #ff8a00;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.button-group button.selected,
+.button-group button:hover {
+  background-color: #ff8a00;
+  color: white;
+}
+
+.submit-btn {
+  margin-top: 1.5rem;
+  padding: 0.6rem 2rem;
+  background-color: #ff8a00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #e67900;
 }

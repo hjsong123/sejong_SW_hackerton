@@ -4,4 +4,4 @@ function MajorInfo(){
     )
 }
 
-export default Splash;
+export default MajorInfo;

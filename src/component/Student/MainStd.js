@@ -4,4 +4,4 @@ function MainStd(){
     )
 }
 
-export default Splash;
+export default MainStd;
